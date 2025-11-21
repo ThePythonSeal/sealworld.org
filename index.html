@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title id="Title">SealTools</title>
+        <link id="Favicon" rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEc0lEQVR4AbRWy24cRRQ9t4w8/gOyYAEyD4F4J8AiwMZ/gQNfABILgxNjE0McnpZg4x+YafsXxht/AK8AJhILWLAAEZA3tjexNNOVc253dXp6OsnYiUe+c6tunTrn3lvVPQ5ofDoffB87F3+KnUvXYuejX+L0Mu3j3Th9+bc4vXo97uzs3NUcJ+zKbuys/Bqnl36OnSVyLf4YZz78ITbkUCUws0BhAaamEAPD8lOFB+f9N/9H/43/mvvH5o4jFg+VPMmLjzwdanQWvqsSoQIww6pjMKAEmXuD5k44gXAzk/7rN6C9Sl48qSjNxZ+S8ASiGQqQoe5F0iQ+7ty7xsrBbt4u0qBExBV05r7IJJQZyk7Uxefm5lA3bWyzOkbjhBFX6oAnEaY8Ad2JALXbAkwZmkHz/vl/094H5rd5JF4cu1EkEXjXDEHtNwVdPOA0xFF++udvUJTFSk+dpg8urgk7IUCJPTWnTqhoUFyeHaCWsXK1iMO2Pz77qFsbRrE6RmPF2swvJjuu4gOYCawNdueYLlib3XlHywp1vQOgumeEyT9t1bXF7saoJwPsAjtwzPJL1rpgfVwuT+aUwHGrn4x5MpS0w2TQ00OdKIF0AdV6WZqfJM0TJSBRWRLUWJbmx/EhyzJMYtvb20g2OzuLNkvr8pNwCnPPDpgZXxUBeZ7jND4he3QBm48vInvyErJnVtB79jJ6L15B9+ya68VY/O9wcHDgczPDxsaGj+tf9dje3l59Cb2zV9F94VNkz62i9/QysqeWkM0uYvOxBehXAEmEA/hbIeawQrciEmYwGFSdqAvWx9WG2kB7DZH05FWcRWmOPEK9LcQYJAJRraZ45GLv3GeCQwSyw8ND1I9CwjIHlV/N6rus3kpuFSVe5uKc2lLcgVQxgd4BJuGb6CWcTOL7+/toiohIMZnGdUs87p3fq6uKZgcUACLFBEqepeLta8sVVz0JBSVWN8XaTBzOO8wpQi3X4dB9BO9ACvKMyqDE37n+ifMF/mr54D6+LuyusmLqjCQRWTQTiI0gOL/w+xpUsTST7768Bt0JMz8kLbWazrxHbHNRnOqEiiM5wDumedAXWLkHJf7nF8296PHxMa5hOET3pSt8RK+OY3jZJGziIq73/OoYZv6Pz2EUVpFJl3cgh08oMP/X+tgmPbdWkmqjkjBim8A4GKJad5EhMj7zTZw0pBdz4nkpQ6p8/p9vm1hkT1xEEi/8AC4+HIxhTYSMp/XC587RBL/19zfk5Z1gYeHoq1dMSWw9/O4IbpNvSBdVZQSCXqSRLyP5EbAm1TorU4d4DL6fXm88QZJtnXmPdyCHtIv3AEGexJkiic1H3neAiyZxeeKclGKJLHmP+7oSGLLCHNBcyQxybImT4C1pKK5j4twTOFp/zQQGg+rEbbKShOJV5RQ3tZubR/4Ul5jI6SPn4D7dC/FFxgvxHLoDN9df9cfJExCRkjj68pwVm1iBSLhJm5XciBe5NtXMiEU6Ho4dPxjCvc955uRU229+XYhr+y0AAAD//yOve7YAAAAGSURBVAMAqzhJbRTIqOsAAAAASUVORK5CYII=">
+        <style>
+            .SidebarButton {
+                width: 100%;
+                height: 3vh;
+                border: none;
+                background-color: #dddddd;
+            }
+
+            .SidebarButton:hover{
+                background-color: #cccccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="SideBar" style="width: 9vw; height: 100vh; position:absolute; top:0; left:0; background-color: #dddddd; display: flex; flex-direction: column;">
+            <h3 style="text-align: center; background-color: #008080; margin: 0; padding: 2vh;">SealTools v1.0.0</h3>
+            <div style="width: 100%; flex-grow: 1;">
+                <button class="SidebarButton" id="ToolHTMLRenderer">HTML Renderer</button>
+            </div>
+            <button class="SidebarButton" id="SettingsOpenButton">Settings</button>
+        </div>
+        <iframe src="/blank.html" id="Tool" style="width: 91vw; height: 100vh; position: absolute; top: 0; left: 9vw; border-width: 0;"></iframe>
+        <script src="main.js"></script>
+    </body>
+<html>

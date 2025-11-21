@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <table style="text-align: left;">
+            <tr>
+                <th>Setting</th>
+                <th>Value</th>
+                <th>Actions</th>
+            </tr>
+            <tr id="SettingsTitle">
+                <th>Page Title</th>
+                <th><input class="Input" type="text" id="SettingsTitle" name="SettingsTitle"></th>
+                <th>
+                    <button class="Save">Save</button>
+                    <button class="SaveLocal">Save to LocalStorage</button>
+                </th>
+            </tr>
+            <tr id="SettingsFavicon">
+                <th>Page Favicon</th>
+                <th><input class="Input" type="text" id="SettingsFavicon" name="SettingsFavicon"></th>
+                <th>
+                    <button class="Save">Save</button>
+                    <button class="SaveLocal">Save to LocalStorage</button>
+                </th>
+            </tr>
+        </table>
+        <script>
+        let settings = ["SettingsTitle","SettingsFavicon"];
+
+        for (let i = 0; i < settings.length; i++) {
+            const row = document.getElementById(settings[i]);
+            const input = row.getElementsByClassName("Input")[0];
+            const save = row.getElementsByClassName("Save")[0];
+            const saveLocal = row.getElementsByClassName("SaveLocal")[0];
+
+            save.onclick = function () {
+                parent.postMessage({
+                    from: "settingsIframe",
+                    action: 1,
+                    type: input.name,
+                    data: input.value
+                }, "*");
+            };
+
+            saveLocal.onclick = function () {
+                parent.postMessage({
+                    from: "settingsIframe",
+                    action: 2,
+                    type: input.name,
+                    data: input.value
+                }, "*");
+            };
+        }
+
+        // request initial settings
+        parent.postMessage({ from: "settingsIframe", action: 0 }, "*");
+
+        // receive initial data
+        window.addEventListener("message", event => {
+            if (!event.data || event.data.from !== "main") return;
+
+            if (event.data.action === 0) {
+                const payload = event.data.payload;
+
+                for (const key in payload) {
+                    document.getElementById(key)
+                        .getElementsByClassName("Input")[0]
+                        .value = payload[key];   // <-- fixed
+                }
+            }
+        });
+        </script>
+    </body>
+</html>

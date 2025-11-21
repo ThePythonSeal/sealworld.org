@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div style="display:flex;flex-direction:row;width:100%;height:100%;gap:1%">
+        <div id="Code" style="height:100%;display:flex;flex-direction:column;flex-grow:1;gap:1%">
+            <div style="width:100%">
+                <button id="RenderButton">Render</button>
+                <!--<button id="FileLoadButton">Load from File</button>-->
+            </div>
+            <textarea id="CodeTextarea" style="flex-grow:1;width:100%;resize:vertical;"></textarea>
+        </div>
+        <div style="flex-grow:1;height:100%;display:flex;flex-direction:column;">
+            <div id="Preview" style="flex-grow:3;width:100%;resize:vertical;">
+                <a id="PreviewLink" href="about:blank" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+                <iframe id="PreviewIframe" style="width:100%;height:100%;"></iframe>
+            </div>
+            <div id="Console" style="flex-grow:1;width:100%;resize:vertical;"></div>
+            </div>
+        </div>
+        <div id="FileLoad" style="display: none;">
+            a
+        </div>
+        <script>
+            document.getElementById("RenderButton").onclick = function(){
+                var myData = document.getElementById("CodeTextarea").value;
+                const myBlob = new Blob([myData], { type: "text/html" });
+                const blobUrl = URL.createObjectURL(myBlob);
+                document.getElementById("PreviewIframe").src = blobUrl;
+                document.getElementById("PreviewLink").href = blobUrl;
+            }
+            document.getElementById("FileLoadButton").onclick = function(){
+                document.getElementById("FileLoad").style = "z-index: 9999; width: 90vw; height: 90vh; position: absolute; top: 5vh; left: 8.75vw;";
+            }
+        </script>
+    </body>
+</html>
