@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/Ubuntu-R.woff2') format('woff2'),
+       url('/assets/fonts/Ubuntu-R.woff') format('woff');
+  font-display: swap;
+}
+
 * {
   font-family: 'Ubuntu', sans-serif;
 }
